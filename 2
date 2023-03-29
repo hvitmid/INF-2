@@ -1,1 +1,53 @@
-]
+#include <stdio.h>
+#include <math.h> 
+#include <locale.h>
+
+void main()
+{
+    setlocale(LC_ALL, "RUS");
+    int n, k;
+    double xn, xk, dx, an, S1, S2, eps1 = 0.1, eps2 = 0.000001, f;
+    puts("Задание 1.7");
+    printf("Введите значение xn=");
+    scanf("%lf", &xn);
+    printf("Введите значение xk=");
+    scanf("%lf", &xk);
+    printf("Введите значение dx=");
+    scanf("%lf", &dx);
+    printf("|    x    |    eps1    |    f1(x)    |    eps2    |    f2(x)    |    f    |\n");
+    for (double x = xn; x <= xk + dx / 2.; x += dx)
+    {
+        n = 1;
+        S1 = 0.;
+        an = x;
+        while (fabs(an) > eps1)
+        {
+            S1 += an;
+            an *= -(pow(x,2) / (2 * n * (2 * n + 1)));
+            n++;
+        }
+
+        k = 1;
+        S2 = 0.;
+        an = x;
+        while (fabs(an) > eps2)
+        {
+            S2 += an;
+            an *= -(pow(x,2) / (2 * k * (2 * k + 1)));
+            k++;
+        }
+        f = sin(x);
+        printf("    %.2f    ", x);
+        printf("    %.1f    ", eps1);
+        printf("     %.2f    ", S1);
+        printf("   %.6f    ", eps2);
+        printf("    %.2f    ", S2);
+        printf("   %lf   ", f);
+        printf("\n");
+    }
+
+    return 0;
+    puts("Задание 2");
+
+}
+Give feedback
