@@ -28,7 +28,7 @@ void main()
 
     int n, k;
     double xn, xk, dx, an, S1, S2, eps1 = 0.1, eps2 = 0.000001, f;
-    puts("Задание 1.7");
+    puts("Задание 1.11");
     printf("Введите значение xn=");
     scanf("%lf", &xn);
     printf("Введите значение xk=");
@@ -44,7 +44,7 @@ void main()
         while (fabs(an) > eps1)
         {
             S1 += an;
-            an *= -(pow(x,2) / (2 * n * (2 * n + 1)));
+            an *= -(pow(x, 2) / (2 * n * (2 * n + 1)));
             n++;
         }
 
@@ -54,7 +54,7 @@ void main()
         while (fabs(an) > eps2)
         {
             S2 += an;
-            an *= -(pow(x,2) / (2 * k * (2 * k + 1)));
+            an *= -(pow(x, 2) / (2 * k * (2 * k + 1)));
             k++;
         }
         f = sin(x);
@@ -65,13 +65,13 @@ void main()
         printf("    %.2f    ", S2);
         printf("   %lf   ", f);
         printf("\n");
-    }
+    } 
 
     return 0;
     puts("Задание 2");
 
 
-
+    //в 3 выводим промежуточные значения
 
 }
 
@@ -79,15 +79,15 @@ void main()
 
 double Delta(double x, double delx)
 {
-	double delta = 0;
-	delta = fabs(x - delx);
-	return delta;
+    double delta = 0;
+    delta = fabs(x - delx);
+    return delta;
 
 }
 double otnDelta(double x, double delx)
 {
-	double res, otndelta;
-	res = Delta(x, delx);
-	otndelta = (res / fabs(delx) * 100);
-	return otndelta;
+    double res, otndelta;
+    res = Delta(x, delx);
+    otndelta = (res / fabs(delx) * 100);
+    return otndelta;
 }
