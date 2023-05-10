@@ -31,13 +31,13 @@ void main()
     int n, k;
     double xn, xk, dx, an, S1, S2, eps1 = 0.1, eps2 = 0.000001, f;
     cout << "Задание 1.11" << endl;
-    cout << "Введите значение xn=" << endl;
+    cout << "Введите значение xn=" ;
     cin >> xn;
-    cout << "Введите значение xk=" << endl;
+    cout << "Введите значение xk=" ;
     cin >> xk;
-    cout << "Введите значение dx=" << endl;
+    cout << "Введите значение dx=" ;
     cin >> dx;
-    cout << "|    x    |    eps1    |    f1(x)    |    eps2    |    f2(x)    |    f    |\n");
+    cout <<  "|" << setw(10) << "x" << setw(10) << "|" << setw(10) << "eps1" << setw(10) << "|" << setw(10) << "S1" << setw(10) << "|" << setw(10) << "eps2" << setw(10) << "|" << setw(10) << "S2" << setw(10) << "|" << setw(10) << "f" << setw(10) << "|" << endl;
     for (double x = xn; x <= xk + dx / 2.; x += dx)
     {
         n = 1;
@@ -60,6 +60,9 @@ void main()
             k++;
         }
         f = sin(x);
+
+        //лучше всегда писать функции 
+       
         printf("    %.2f    ", x);
         printf("    %.1f    ", eps1);
         printf("     %.2f    ", S1);
