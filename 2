@@ -1,7 +1,9 @@
-#include <stdio.h>
-#include <locale.h>
-#include <math.h>
-#include <stdlib.h>
+#include<iostream>
+#include<stdio.h>
+#include<math.h>
+#include<iomanip>
+#include<ctime>
+using namespace std;
 
 double Delta(double, double);
 double otnDelta(double, double);
@@ -28,14 +30,14 @@ void main()
 
     int n, k;
     double xn, xk, dx, an, S1, S2, eps1 = 0.1, eps2 = 0.000001, f;
-    puts("Задание 1.11");
-    printf("Введите значение xn=");
-    scanf("%lf", &xn);
-    printf("Введите значение xk=");
-    scanf("%lf", &xk);
-    printf("Введите значение dx=");
-    scanf("%lf", &dx);
-    printf("|    x    |    eps1    |    f1(x)    |    eps2    |    f2(x)    |    f    |\n");
+    cout << "Задание 1.11" << endl;
+    cout << "Введите значение xn=" << endl;
+    cin >> xn;
+    cout << "Введите значение xk=" << endl;
+    cin >> xk;
+    cout << "Введите значение dx=" << endl;
+    cin >> dx;
+    cout << "|    x    |    eps1    |    f1(x)    |    eps2    |    f2(x)    |    f    |\n");
     for (double x = xn; x <= xk + dx / 2.; x += dx)
     {
         n = 1;
@@ -65,9 +67,8 @@ void main()
         printf("    %.2f    ", S2);
         printf("   %lf   ", f);
         printf("\n");
-    } 
+    }
 
-    return 0;
     puts("Задание 2");
 
 
